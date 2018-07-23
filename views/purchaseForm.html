@@ -1,0 +1,46 @@
+<form id="purchaseForm">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <select id="purchaseVendor" class="form-control" ng-model="transaction.purchase.vendor">
+          <option ng-repeat="v in transaction.vendors" ng-value="v.UID">{{v.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <select id="purchaseStrain" class="form-control" ng-model="transaction.purchase.strain">
+          <option ng-repeat="s in transaction.allStrains" ng-value="s.UID">{{s.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <!-- <label for="purchaseAmount"># of</label> -->
+        <input type="number" class="form-control" ng-model="transaction.purchase.amount" step=".01">
+      </div>
+      <div class="col-sm-3">
+        <select class="form-control" ng-model="transaction.purchaseIncrement">
+          <option value="g">Grams</option>
+          <option value="oz">Ounces</option>
+          <option value="lb">Pounds</option>
+        </select>
+      </div>
+      <div class="col-sm-3">
+        <!-- <label for="purchasePayment">$</label> -->
+        <input type="number" class="form-control" ng-model="transaction.purchase.payment">
+      </div>
+      <div class="col-sm-3">
+        <label class="checkbox-inline">
+          <input type="checkbox" ng-model="transaction.purchase.front">
+          Front
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-sm btn-success" ng-click="transaction.makePurchase()">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

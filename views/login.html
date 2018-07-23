@@ -1,0 +1,16 @@
+<style>
+.loginComponent{
+  margin:2%;
+}
+</style>
+<div class="container" ng-controller="LoginController as login">
+  <form>
+    <div class="form-group">
+      <label for="username"></label>
+      <input type="text" id="username" class="form-control loginComponent" placeholder="username" ng-model="login.username">
+      <label for="password"></label>
+      <input type="password" class="form-control loginComponent" placeholder="password" ng-model="login.password">
+      <button class="btn btn-sm btn-success loginComponent" ng-click="login.login()">Submit</button>
+    </div>
+  </form>
+</div>

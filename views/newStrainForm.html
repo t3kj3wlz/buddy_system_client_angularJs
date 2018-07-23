@@ -1,0 +1,39 @@
+<form id="newStrainForm">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="newStrainName">Name:</label>
+        <input type="text" id="newStrainName" class="form-control" ng-model="strain.newStrain.name">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <label for="newStrainThc">THC %</label>
+        <input type="number" step=".01" id="newStrainThc" class="form-control" ng-model="strain.newStrain.thc">
+      </div>
+      <div class="col-sm-3">
+        <label for="newStrainIndica">Indica %</label>
+        <input type="number" step=".01" id="newStrainIndica" class="form-control" ng-model="strain.newStrain.indica">
+      </div>
+      <div class="col-sm-3">
+        <label for="newStrainSativa">Sativa %</label>
+        <input type="number" step=".01" id="newStrainSativa" class="form-control" ng-model="strain.newStrain.sativa">
+      </div>
+      <div class="col-sm-3">
+        <label for="newStrainPpg">Ppg:</label>
+        <input type="number" step=".01" id="newStrainPpg" class="form-control" ng-model="strain.newStrain.ppg">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="newStrainDescription">Description:</label>
+        <textarea class="form-control" ng-model="strain.newStrain.description"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button id="newStrainSubmit" class="btn btn-sm btn-success" ng-click="strain.addStrain()">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

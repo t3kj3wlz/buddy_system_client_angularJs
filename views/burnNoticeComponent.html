@@ -1,0 +1,14 @@
+<div ng-controller="BurnNoticeController as burn">
+    <h3>Burn Notice {{burn.stats.total.toFixed(2)}} {{burn.increment}}</h3>
+    <h6>7 day rolling stats</h6>
+    <h4>
+      <span style="color:green">${{burn.stats.income}}</span>
+      <span style="color:red;float:right">-${{burn.stats.expense}}</span>
+    </h4>
+    <ul class="list-group">
+      <li ng-class="burn.stats.soldCss">Sold: <span style="float:right">{{burn.stats.sold.toFixed(2)}}%</span></li>
+      <li ng-class="burn.stats.personalCss">Smoked: <span style="float:right">{{burn.stats.personal.toFixed(2)}}%</li>
+      <li ng-class="burn.stats.discrepCss">Lost: <span style="float:right">{{burn.stats.discrepency.toFixed(2)}}%</span></li>
+    </ul>
+
+</div>

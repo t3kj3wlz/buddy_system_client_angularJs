@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="BuddyClient">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="./node_modules/angular/angular.js"></script>
+        <script src="./node_modules/angular-route/angular-route.js"></script>
+        <script src="./node_modules/angular-cookies/angular-cookies.js"></script>
+        <script src="./js/transactionController.js"></script>
+        <script src="./js/buddyService.js"></script>
+        <script src="./js/homeController.js"></script>
+        <script src="./js/apiService.js"></script>
+        <script src="./js/loginController.js"></script>
+        <script src="./js/strainController.js"></script>
+        <script src="./js/buyerController.js"></script>
+        <script src="./js/vendorController.js"></script>
+        <script src="./js/burnNoticeController.js"></script>
+        <script src="./js/registrationController.js"></script>
+        <script src="./js/buddyModule.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div ng-include="'views/navbar.html'"></div>
+        <div ng-include="'views/header.html'"></div>
+        <div ng-view></div>
+    </body>
+</html>

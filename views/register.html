@@ -1,0 +1,81 @@
+<div class="container" ng-controller="RegistrationController as reg">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Initial Capital:</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <label for="initialStash">$:</label>
+        <input id="initialStash" type="number" class="form-control" ng-model="reg.usdStash">
+      </div>
+      <div class="col-sm-6">
+        <label for="initialBtc">Btc:</label>
+        <input id="initialBtc" type="number" class="form-control" ng-model="reg.btcStash">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label>Existing Buyers:</label>
+        <textarea class="form-control" ng-model="reg.buyerStr"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <label>Existing Vendors:</label>
+        <textarea class="form-control" ng-model="reg.vendorStr"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Existing Inventory:
+          <span style="float:right"><button ng-click="reg.addStrain()" class="btn btn-sm btn-success">Add</button></span>
+        </h3>
+      </div>
+    </div>
+    <div ng-repeat="s in reg.strains track by $index">
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="{{$index}}_name">Name:</label>
+          <input type="text" class="form-control" ng-model="s.name" id="{{$index}}_name">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="{{$index}}_thc">THC %:</label>
+          <input type="number" step=".01" ng-model="s.thc" class="form-control">
+        </div>
+        <div class="col-sm-4">
+          <label for="{{$index}}_sativa">Sativa %:</label>
+          <input type="number" step=".01" ng-model="s.sativa" class="form-control">
+        </div>
+        <div class="col-sm-4">
+          <label for="{{$index}}_indica">Indica %:</label>
+          <input type="number" step=".01" ng-model="s.indica" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <label for="{{$index}}_inventory">Grams:</label>
+          <input type="number" id="{{$index}}_inventory" ng-model="s.inventory" class="form-control">
+        </div>
+        <div class="col-sm-6">
+          <label for="{{$index}}_ppg">Price Per Gram:</label>
+          <input type="number" id="{{$index}}_ppg" ng-model="s.ppg" class="form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="{{$index}}_description">Description:</label>
+          <textarea class="form-control" ng-model="s.description" id="{{$index}}_description"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-sm btn-success" ng-click="reg.submit()">Submit</button>
+      </div>
+    </div>
+  </div>
+</dvi>

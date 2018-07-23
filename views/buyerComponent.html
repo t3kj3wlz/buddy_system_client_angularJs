@@ -1,0 +1,15 @@
+<div ng-controller="BuyerController as buyer">
+  <div ng-include="'views/newBuyerModal.html'"></div>
+  <h3>Knowing your customer</h3>
+  <div class="btn-group">
+    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#newBuyerModal">New</button>
+  </div>
+  <ul class="list-group">
+    <li ng-repeat="b in buyer.activeBuyers | orderBy : 'stats.predictedDays'"
+    ng-if="b.stats.predictedDays < 10 && b.stats.predictedDays > -60"
+    ng-class="b.stats.predictionClass">
+      <span>{{b.buyer}} ~{{b.stats.avgGrams.toFixed(2)}} grams @ ~ ${{b.stats.avgDollars.toFixed(2)}}</span>
+      <span style="float:right">{{b.stats.predictedDays.toFixed(0)}}</span>
+    </li>
+  </ul>
+</div>

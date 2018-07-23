@@ -1,0 +1,15 @@
+<div ng-controller="TransactionController as transaction">
+  <span ng-include="'views/saleModal.html'"></span>
+  <span ng-include="'views/tipModal.html'"></span>
+  <span ng-include="'views/purchaseModal.html'"></span>
+  <h3>Conduct Business</h3>
+  <h6>$ {{transaction.currentUsd.current_stash}}</h6>
+  <h6>Btc: {{transaction.currentBtc.current_stash}}</h6>
+  <div class="btn-group">
+    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#acceptTipModal">Accept Tip</button>
+    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#quickSaleModal">Make Sale</button>
+    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#purchaseModal">Make Purchase</button>
+  </div>
+  <div ng-if="transaction.fronts.sales.length" ng-include="'views/salesFrontList.html'"></div>
+  <div ng-if="transaction.fronts.purchases.length" ng-include="'views/purchaseFrontList.html'"></div>
+</div>

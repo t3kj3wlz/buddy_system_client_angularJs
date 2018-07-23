@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h5>You owe:</h5>
+    <ul class="list-group">
+      <li ng-repeat="f in transaction.fronts.purchases" ng-class="f.displayClass" ng-click="transaction.settleFront(f.UID)">
+        {{f.buyer}} | ${{f.payment}} | {{f.created_date | date:'shortDate'}}
+      </li>
+    </ul>
+  </div>
+</div>

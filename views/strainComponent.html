@@ -1,0 +1,15 @@
+<div ng-controller="StrainController as strain">
+  <span ng-include="'views/strainModal.html'"></span>
+  <span ng-include="'views/newStrainModal.html'"></span>
+  <h3>Inventory {{strain.total}}
+    <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#newStrain" style="float:right">New</button>
+  </h3>
+  <ul class="list-group">
+    <li class="list-group-item"
+    ng-repeat="s in strain.strains"
+    ng-if="s.inStock === '1'">
+        <a data-toggle="modal" data-target="#strainDetail" ng-click="strain.setDetails($index)">{{s.name}}</a>
+        <span style="float:right">{{s.inventory}}</span>
+    </li>
+  </ul>
+</div>
