@@ -1,7 +1,6 @@
 var app = angular.module('ApiService',[])
     .factory('ApiService',function($http){
-        //const APIBASE = 'http://buddysystem.attlocal.net/';
-		const APIBASE = 'http://outlawdesigns.ddns.net:9663/';
+        const APIBASE = 'http://api.outlawdesigns.io:9663/';
         return {
             token:1234,
             handleResponse:function(response){
